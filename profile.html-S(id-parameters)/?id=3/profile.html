@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>semgle - 프로필</title>
+  <link rel="icon" href="assets/img/icon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/profile.css" />
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <a href="index.html" class="logo-link">
+        <img src="assets/img/icon.png" alt="semgle logo" class="logo" />
+      </a>
+    </div>
+    <div class="header-right">
+      <nav>
+        <a href="index.html">홈</a>
+        <a href="projects.html">프로젝트</a>
+      </nav>
+      <button id="darkToggle">☀️</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="profileSection" class="profile">
+      <p>멤버 정보를 불러오는 중입니다...</p>
+    </section>
+  </main>
+  
+  <script>
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+      document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('darkToggle').textContent = '🌙';
+      });
+    }
+
+    const darkToggle = document.getElementById('darkToggle');
+    darkToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      darkToggle.textContent = isDark ? '🌙' : '☀️';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    const membersData = [
+  {
+    id: '1',
+    name: '임준범',
+    category: '클라우드컴퓨팅',
+    bio: '🥉🥉',
+    github: 'https://github.com/qpzm1010',
+    joined: '2023년~2025년',
+    history: ['2023 - 기능반 입부', '2024 - 전국기능경기대회 경기도대표', '2025 - 전국기능경기대회 경기도대표'],
+    achievements: ['2024 - 지방기능경기대회 3위', '2025 - 지방기능경기대회 3위']
+  },
+  {
+    id: '2',
+    name: '김건우',
+    category: '사이버보안',
+    bio: '🥉🥈',
+    github: 'https://github.com/gunwoo105',
+    joined: '2023년~2025년',
+    history: ['2023 - 기능반 입부', '2024 - 전국기능경기대회 경기도대표', '2025 - 전국기능경기대회 경기도대표'],
+    achievements: ['2024 - 지방기능경기대회 3위', '2025 - 지방기능경기대회 2위']
+  },
+  {
+    id: '3',
+    name: '이현',
+    category: '클라우드컴퓨팅',
+    bio: '',
+    github: 'https://github.com/dlgus081113',
+    joined: '2024년~2026년',
+    history: ['2024 - 기능반 입부', '2025 - 경기도 지방기능경기대회 참가'],
+    achievements: []
+  },
+  {
+    id: '4',
+    name: '이승원',
+    category: '사이버보안',
+    bio: '',
+    github: '',
+    joined: '2023년~2025년',
+    history: ['2023 - 기능반 입부', '2025 - 경기도 지방기능경기대회 참가'],
+    achievements: []
+  },
+  {
+    id: '5',
+    name: '박정근',
+    category: '사이버보안',
+    bio: '',
+    github: '',
+    joined: '2023년~2025년',
+    history: ['2023 - 기능반 입부', '2024 - 경기도 지방기능경기대회 참가', '2025 - 경기도 지방기능경기대회 참가'],
+    achievements: []
+  },
+  {
+    id: '6',
+    name: '김준서',
+    category: '클라우드컴퓨팅',
+    bio: '',
+    github: '',
+    joined: '2023년~2025년',
+    history: ['2023 - 기능반 입부', '2024 - 경기도 지방기능경기대회 참가', '2025 - 경기도 지방기능경기대회 참가'],
+    achievements: []
+  },
+  {
+    id: '7',
+    name: '김단유',
+    category: '클라우드컴퓨팅',
+    bio: '',
+    github: '',
+    joined: '2024년~2026년',
+    history: ['2024 - 기능반 입부', '2025 - 경기도 지방기능경기대회 참가'],
+    achievements: []
+  },
+  {
+    id: '8',
+    name: '석정희',
+    category: '클라우드컴퓨팅',
+    bio: '',
+    github: '',
+    joined: '2024년~2026년',
+    history: ['2024 - 기능반 입부', '2025 - 경기도 지방기능경기대회 참가'],
+    achievements: []
+  },
+  {
+    id: '9',
+    name: '이자목',
+    category: '클라우드컴퓨팅',
+    bio: '',
+    github: '',
+    joined: '2022년~2024년',
+    history: ['2022 - 기능반 입부', '2023 - 경기도 지방기능경기대회 참가', '2024 - 경기도 지방기능경기대회 참가'],
+    achievements: []
+  },
+  {
+    id: '10',
+    name: '박대만',
+    category: '사이버보안',
+    bio: '',
+    github: '',
+    joined: '2024년~2026년',
+    history: ['2024 - 기능반 입부', '2025 - 경기도 지방기능경기대회 참가'],
+    achievements: []
+  },
+  {
+    id: '11',
+    name: '임형민',
+    category: '클라우드컴퓨팅',
+    bio: '🥉🥇',
+    github: 'https://github.com/dui8',
+    joined: '2022년~2024년',
+    history: ['2022 - 기능반 입부', '2023 - 전국기능경기대회 경기도대표', '2024 - 전국기능경기대회 경기도대표'],
+    achievements: ['2023 - 지방기능경기대회 3위', '2024 - 지방기능경기대회 1위', '2024 - 전국기능경기대회 장려상']
+  },
+  {
+    id: '12',
+    name: '김태인',
+    category: '클라우드컴퓨팅',
+    bio: '',
+    github: '',
+    joined: '2022년~2024년',
+    history: ['2022 - 기능반 입부', '2023 - 경기도 지방기능경기대회 참가', '2024 - 경기도 지방기능경기대회 참가'],
+    achievements: ['2023 - 지방기능경기대회 장려상']
+  },
+  {
+    id: '13',
+    name: '김동예',
+    category: '클라우드컴퓨팅',
+    bio: '',
+    github: '',
+    joined: '2024년~2026년',
+    history: ['2024 - 기능반 입부', '2025 - 경기도 지방기능경기대회 참가'],
+    achievements: []
+  },
+  {
+    id: '14',
+    name: '김민준',
+    category: '클라우드컴퓨팅',
+    bio: '',
+    github: '',
+    joined: '2024년~2026년',
+    history: ['2024 - 기능반 입부', '2025 - 경기도 지방기능경기대회 참가'],
+    achievements: []
+  },
+  {
+    id: '15',
+    name: '함민식',
+    category: '클라우드컴퓨팅',
+    bio: '',
+    github: '',
+    joined: '2024년~2026년',
+    history: ['2024 - 기능반 입부', '2025 - 경기도 지방기능경기대회 참가'],
+    achievements: []
+  },
+  {
+    id: '16',
+    name: '김현수',
+    category: '클라우드컴퓨팅',
+    bio: '',
+    github: '',
+    joined: '2024년~2026년',
+    history: ['2024 - 기능반 입부', '2025 - 경기도 지방기능경기대회 참가'],
+    achievements: []
+  }
+];
+
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const target = membersData.find(m => m.id === id);
+    const section = document.getElementById('profileSection');
+
+    if (!target) {
+      section.innerHTML = '<p>해당 멤버를 찾을 수 없습니다.</p>';
+    } else {
+      const categoryClass = target.category === '클라우드컴퓨팅' ? 'cloud' : 'cyber';
+      const avatarImg = target.category === '클라우드컴퓨팅' ? 'assets/img/cloud.jpg' : 'assets/img/cyber.png';
+
+      const skillHTML = (target.skills || []).map(skill => `<span class="badge">${skill}</span>`).join('');
+      const historyHTML = (target.history || []).map(h => `<li>${h}</li>`).join('');
+      const achievementsHTML = (target.achievements || []).map(a => `<li>${a}</li>`).join('');
+
+      section.innerHTML = `
+        <div class="profile-card ${categoryClass}">
+          <div class="card-left">
+            <div class="avatar" style="background-image: url('${avatarImg}');"></div>
+          </div>
+          <div class="card-right">
+            <div class="profile-info">
+              <h2>${target.name}</h2>
+              <p class="category">${target.category}</p>
+              <p class="joined">${target.joined}</p>
+              <p class="bio">${target.bio || ''}</p>
+              ${target.github ? `<a class="github-link" href="${target.github}" target="_blank">🔗 GitHub</a>` : ''}
+            </div>
+            <div class="profile-extra">
+              ${skillHTML ? `
+                <div class="skill-badges">${skillHTML}</div>` : ''}
+
+              ${historyHTML ? `
+                <div class="timeline">
+                  <h3>활동 연혁</h3>
+                  <ul>${historyHTML}</ul>
+                </div>` : ''}
+
+              ${achievementsHTML ? `
+                <div class="achievements">
+                  <h3>🏆 주요 수상</h3>
+                  <ul>${achievementsHTML}</ul>
+                </div>` : ''}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
